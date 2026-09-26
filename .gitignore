@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment/secrets
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large/raw datasets
+*.csv
+*.xlsx
+*.parquet
+
+# Model files
+*.pkl
+*.joblib
+*.h5
+*.keras
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+# Cache
+cache/
