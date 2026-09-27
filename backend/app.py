@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pathlib import Path
 import json
@@ -6,6 +7,14 @@ app = FastAPI(
     title="LaunderGraph API",
     description="Backend API for AML transaction risk analysis",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 DATA_FILE = Path(__file__).resolve().parent / "data" / "flagged_transactions.json"
