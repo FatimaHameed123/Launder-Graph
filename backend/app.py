@@ -1,3 +1,7 @@
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, HTTPException
+from pathlib import Path
+import json
 # from fastapi import FastAPI, HTTPException
 # from pathlib import Path
 # import json
@@ -71,6 +75,18 @@ app = FastAPI(
     version="1.0.0"
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+DATA_FILE = Path(__file__).resolve().parent / "data" / "flagged_transactions.json"
+
+with open(DATA_FILE, "r", encoding="utf-8") as f:
+    transactions = json.load(f)
 class InvestigationCreate(BaseModel):
     transaction_id: int
     status: str = "OPEN"

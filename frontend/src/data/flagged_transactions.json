@@ -1,0 +1,16 @@
+[
+  {
+    "transaction_id": 0,
+    "from_account": "8028A2FC0",
+    "to_account": "80B6BEA60",
+    "amount": 13827.65,
+    "timestamp": "2022-09-09T03:19:00",
+    "risk_score": 1.0,
+    "risk_level": "HIGH",
+    "reasons": [
+      "payment_format_ACH",
+      "receiving account has an abnormally high number of distinct counterparties",
+      "log_amount"
+    ]
+  }
+]
